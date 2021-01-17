@@ -15,14 +15,14 @@ const profileImgUrl = require('/src/assets/profile.svg')
 //     </div>
 //     <div>Homeworld: <button id="open-planet" ✅ 10. add data attribute to transfer info with click event ✅> Show planet info </button></div>
 // </article>
-export const Person = ({ name, height, mass, eye_color }) => { 
+export const Person = ({ name, height, mass, eye_color, homeworld }) => { 
   return `<article className="card">
       <img src=${profileImgUrl} alt="person-image"/>
       <h3>Hero Name: ${name}</h2>
       <div>Body: <strong style="margin-right: 10px;">${height}</strong>cm | <strong>${mass}</strong> kg/ft</div>
       <div className="eyes_color">Eye Color: <div className="eye_color--container" style="background: ${eye_color}"> </div>
       </div>
-      <div>Homeworld: <button id="open-planet" ✅ 10. add data attribute to transfer info with click event ✅> Show planet info </button></div>
+      <div>Homeworld: <button id="open-planet" data-planeturl="${homeworld}"> Show planet info </button></div>
   </article>`
 };
 

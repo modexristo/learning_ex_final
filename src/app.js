@@ -15,3 +15,4 @@ const App = ({ tabs }) => {
 };
 
 // ⚠️ Did you forget something? ⚠️
+export default App;

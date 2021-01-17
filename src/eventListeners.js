@@ -6,12 +6,41 @@ export const appEventListener = (event) => {
   //🔨 4. verify that tabs are working 🔨
   if (event.target.id === 'people') {
     console.log('people clicked');
-    document.querySelector("main").insertAdjacentHTML("afterbegin", People({data: []}));
+    const ppl = [{
+      "name": "Luke Skywalker",
+      "height": "172",
+      "mass": "77",
+      "eye_color": "blue"
+    }, {
+      "name": "C-3PO",
+      "height": "167",
+      "mass": "75",
+      "eye_color": "yellow"
+    }, {
+      "name": "R2-D2",
+      "height": "96",
+      "mass": "32",
+      "eye_color": "red"
+    }]
+    document.querySelector("main").insertAdjacentHTML("afterbegin", People({"data": ppl}));
   }
 
   if (event.target.id === 'planets') {
     console.log('planets clicked');
-    document.querySelector("main").insertAdjacentHTML("afterbegin", Planets({data: []}));
+    const planet = [{
+      "name": "Tatooine",
+      "climate": "arid",
+      "population": "200000"
+    }, {
+      "name": "Alderaan",
+      "climate": "temperate",
+      "population": "2000000000"
+    }, {
+      "name": "Yavin IV",
+      "climate": "temperate, tropical",
+      "population": "1000"
+    }]
+    document.querySelector("main").insertAdjacentHTML("afterbegin", Planets({"data": planet}));
   }
   //🔨 8. render people elements by clicking on people's tab 🔨
   //🔨 8. render planets elements by clicking on planets' tab🔨

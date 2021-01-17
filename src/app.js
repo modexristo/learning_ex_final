@@ -1,3 +1,4 @@
+import { appEventListener } from './eventListeners'
 
 // the arg of require was hardcoded in the src attribute of the html part returned from App()
 // but the image is not rendered properly. This fix was required
@@ -10,7 +11,7 @@ const App = ({ tabs }) => {
 
   // Do you remember event bubbling ? 🎈🎈
   // 🔨 2. attach and event listener to element with id 🔸app🔸 and use appEventListener every time a users clicks on it🔨
-  document.getElementById("app")
+  document.getElementById("app").addEventListener('click', appEventListener)
   
   // ✅ 3. get a list of Button elements from tabs✅
   // const buttonsList = ???;

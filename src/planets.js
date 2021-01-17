@@ -25,10 +25,17 @@ export const Planet = ({ name, climate, population }) => {
 export const Planets = ({ data }) => {
   // ✅ 9. get a list of planet elements ✅
   // const planetList = ???;
+  //const planetList = data.map(planet => Planet(planet))
+
+  // this also works!
+  // all map needs is a callback, Planet is one, so its acceptable
+  // in Planet, we desctructure what map passes in
+  const planetList = data.map(Planet)
 
   // ✅ 5. render Planets content ✅
+  // ♻️ 9a. use appendListOfElements helper function to display planetList ♻️
   return `
      <h2>Planets List</h2>
-     ♻️ 9a. use appendListOfElements helper function to display planetList ♻️
+     ${appendListOfElements(planetList)}
   `;
 };

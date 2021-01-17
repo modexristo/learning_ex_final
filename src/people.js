@@ -29,10 +29,17 @@ export const Person = ({ name, height, mass, eye_color }) => {
 export const People = ({ data }) => {
   // ✅ 9. get a list of planet elements ✅
   // const peopleList = ???;
+  // const peopleList = data.map(person => Person(person))
+
+  // this also works!
+  // all map needs is a callback, Person is one, so its acceptable
+  // in Person, we desctructure what map passes in
+  const peopleList = data.map(Person)
 
   // ✅ 5. render People content ✅
+  // 9a. use appendListOfElements helper function to display planetList ♻️ 
   return `
      <h2>People List</h2>
-     ♻️ 9a. use appendListOfElements helper function to display planetList ♻️ 
+     ${appendListOfElements(peopleList)}
   `;
 };

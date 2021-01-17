@@ -1,7 +1,6 @@
 
 // 🔨6. build a function to retrieve each planet 🔨
-
-const Planet = () => { return; }
+export const Planet = () => { return; }
 
 // ⚠️ Planet Element ⚠️
 // <article className="card">
@@ -12,7 +11,7 @@ const Planet = () => { return; }
 // </article>
 
 
-const Planets = ({ data }) => {
+export const Planets = ({ data }) => {
   // ✅ 9. get a list of planet elements ✅
   // const planetList = ???;
 

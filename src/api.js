@@ -37,11 +37,13 @@ const addPlanetInfo = (Component, planetUrl) => {
         console.log(planet)
         // 🤷🏼‍‍‍️ 11b. but how can we extract planet info outside of a promise? 🤷🏾
         // innetHtml clears previous html!
-       mainContentArea.innerHTML = Component({data: [planet]})
+        mainContentArea.innerHTML = `<div class="planet-info">
+        ${Component({data: [planet]})}
+      </div>`;
     })
-    .catch(() =>  { 
+    .catch((error) =>  { 
       /* ✅ throw an alert in case of error her ✅ */ 
-      console.log('something went wrong while trying to fetch ' + url);
+      console.log('something went wrong while trying to fetch ' + planetUrl, error);
     });
 };
 

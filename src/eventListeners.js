@@ -6,6 +6,14 @@ export const appEventListener = (event) => {
   //🔨 4. verify that tabs are working 🔨
   if (event.target.id === 'people') {
     console.log('people clicked');
+  }
+
+  if (event.target.id === 'planets') {
+    console.log('planets clicked');
+  }
+
+  //🔨 8. render people elements by clicking on people's tab 🔨
+  if (event.target.id === 'people') {
     const ppl = [{
       "name": "Luke Skywalker",
       "height": "172",
@@ -25,8 +33,8 @@ export const appEventListener = (event) => {
     document.querySelector("main").insertAdjacentHTML("afterbegin", People({"data": ppl}));
   }
 
+  //🔨 8. render planets elements by clicking on planets' tab🔨
   if (event.target.id === 'planets') {
-    console.log('planets clicked');
     const planet = [{
       "name": "Tatooine",
       "climate": "arid",
@@ -42,7 +50,5 @@ export const appEventListener = (event) => {
     }]
     document.querySelector("main").insertAdjacentHTML("afterbegin", Planets({"data": planet}));
   }
-  //🔨 8. render people elements by clicking on people's tab 🔨
-  //🔨 8. render planets elements by clicking on planets' tab🔨
   //🔨 11. render planet info element by clicking on show planet info button🔨
 };

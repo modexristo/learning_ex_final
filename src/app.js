@@ -1,4 +1,5 @@
 import { appEventListener } from './eventListeners'
+import { Button, appendListOfElements } from './common'
 
 // the arg of require was hardcoded in the src attribute of the html part returned from App()
 // but the image is not rendered properly. This fix was required
@@ -15,9 +16,15 @@ const App = ({ tabs }) => {
   
   // ✅ 3. get a list of Button elements from tabs✅
   // const buttonsList = ???;
+  // maps the list of tab names, to Button elements
+  const buttonsList = tabs.map(el => Button({name: el}))
+
+  // within <nav> use appendListOfElements helper function to display planetList
+  // if not, and you provide the buttonsList directly, then the comma will be rendered too!
+  // after that, add the peoples and planets data
   return `<h1 class="title">SWAPP</h1>
     <img width="100%" height="500" src="${spaceImgUrl}" alt="space"/> 
-    <nav> ♻️ use appendListOfElements helper function to display planetList ♻️ </nav>`;
+    <nav>${appendListOfElements(buttonsList)}</nav>`;
 };
 
 // ⚠️ Did you forget something? ⚠️

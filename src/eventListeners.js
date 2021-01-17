@@ -4,6 +4,7 @@ import { People } from './people'
 import { Planets } from './planets'
 
 export const appEventListener = (event) => {
+  console.log(event)
   //🔨 4. verify that tabs are working 🔨
   if (event.target.id === 'people') {
     console.log('people clicked');
@@ -22,6 +23,11 @@ export const appEventListener = (event) => {
   if (event.target.id === 'planets') {
     api.addEntities(Planets, 'planets');
   }
-  
+
   //🔨 11. render planet info element by clicking on show planet info button🔨
+  if (event.target.id === 'open-planet') {
+    console.log('open-planet clicked');
+    api.addPlanetInfo(Planets, event.target.dataset.planeturl)
+  }
+
 };

@@ -22,7 +22,11 @@ const addEntities = (Component, url) => {
    }
 
   //🔨 7. fetch and use onSuccess to retrieve 🤖 star wars 🤖 data based on the provided url (`https://swapi.dev/api/${url}/`)🔨
-  fetchEndpoint(`https://swapi.dev/api/${url}/`).then(onSuccess)
+  fetchEndpoint(`https://swapi.dev/api/${url}/`)
+  .then(onSuccess)
+  .catch(err => {
+    console.log('something went wrong while trying to fetch ' + url);
+  });
 
 };
 
@@ -30,10 +34,15 @@ const addPlanetInfo = (Component, planetUrl) => {
   fetchEndpoint(planetUrl.replace(/http/g, "https"))
     .then((planet) => {
         // ✅ 11a. print results to the console ✅
-
+        console.log(planet)
         // 🤷🏼‍‍‍️ 11b. but how can we extract planet info outside of a promise? 🤷🏾
+        // innetHtml clears previous html!
+       mainContentArea.innerHTML = Component({data: [planet]})
     })
-    .catch(() =>  { /* ✅ throw an alert in case of error her ✅ */ });
+    .catch(() =>  { 
+      /* ✅ throw an alert in case of error her ✅ */ 
+      console.log('something went wrong while trying to fetch ' + url);
+    });
 };
 
 export default {
